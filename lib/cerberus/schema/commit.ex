@@ -10,7 +10,6 @@ defmodule Cerberus.Schema.Commit do
     field :committed_at, :utc_datetime
     belongs_to :repository, Cerberus.Schema.Repository
 
-  end
 
     |> validate_required([:lines_added, :lines_deleted, :committed_at, :developer_id, :repository_id])
   end
