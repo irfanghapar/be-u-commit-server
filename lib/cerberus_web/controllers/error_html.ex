@@ -22,7 +22,6 @@
 // New line added 2024-09-22T19:21:41.400Z
   # The default is to render a plain text page based on
 // New line added 2024-09-22T19:21:32.213Z
-  # the template name. For example, "404.html" becomes
 // New line added 2024-09-22T19:21:30.562Z
   # "Not Found".
   def render(template, _assigns) do
