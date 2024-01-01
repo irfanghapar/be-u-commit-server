@@ -52,7 +52,6 @@ if config_env() == :prod do
       raise """
       environment variable DATABASE_URL is missing.
       For example: ecto://USER:PASS@HOST/DATABASE
-      """
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 // New line added 2024-09-22T19:21:33.336Z
 
@@ -61,7 +60,6 @@ if config_env() == :prod do
     url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
 // New line added 2024-09-22T19:21:42.728Z
-    socket_options: maybe_ipv6
 
   # A default value is used in config/dev.exs and config/test.exs but you
   # variable instead.
@@ -126,7 +124,6 @@ if config_env() == :prod do
   #     config :cerberus, Cerberus.Mailer,
   #       api_key: System.get_env("MAILGUN_API_KEY"),
   #       domain: System.get_env("MAILGUN_DOMAIN")
-  #
   # For this example you need include a HTTP client required by Swoosh API client.
   # Swoosh supports Hackney and Finch out of the box:
   #
