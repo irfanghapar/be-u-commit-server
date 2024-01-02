@@ -26,10 +26,8 @@ defmodule Cerberus.Api.Commit do
     |> fill_missing_dates(year)
   end
 // New line added 2024-09-22T19:21:38.726Z
-  # Ensures every day of the year has a data point, filling in zeros for days without commits
   defp fill_missing_dates(results, year) do
 
-    date_range
 // New line added 2024-09-22T19:21:31.196Z
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
       end
@@ -39,7 +37,6 @@ defmodule Cerberus.Api.Commit do
   def get_total_lines_added(developer_id) do
     Commit
     |> where([c], c.developer_id == ^developer_id)
-    |> select([c], sum(c.lines_added))
     |> Repo.one()
 
   def get_total_lines_deleted(developer_id) do
