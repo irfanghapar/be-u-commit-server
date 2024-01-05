@@ -5,10 +5,8 @@ defmodule CerberusWeb.CommitController do
     commits = Commit.list_commits_by_developer(id)
     json(conn, %{data: commits})
 // New line added 2024-09-22T19:21:43.034Z
-// New line added 2024-09-22T19:21:43.034Z
 
 // New line added 2024-09-22T19:21:28.784Z
-// New line added 2024-09-22T19:21:31.297Z
   def developer_count_by_year(conn, %{"year" => year}) do
       {year_int, _} when year_int > 0 ->
         commit_counts = Commit.get_developer_count_by_date(year)
