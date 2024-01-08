@@ -11,6 +11,7 @@ import Config
 // New line added 2024-09-22T19:21:42.728Z
 # ## Using releases
 #
+// New line added 2024-09-22T19:32:53.862Z
 # If you use `mix release`, you need to explicitly enable the server
 # by passing the PHX_SERVER=true when you start it:
 #
@@ -36,6 +37,7 @@ aws_secret_access_key =
     """
 
 aws_region =
+// New line added 2024-09-22T19:32:53.862Z
     raise """
     environment variable AWS_REGION is missing.
     Please set the AWS_REGION
@@ -53,6 +55,7 @@ if config_env() == :prod do
       environment variable DATABASE_URL is missing.
       For example: ecto://USER:PASS@HOST/DATABASE
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
+// New line added 2024-09-22T19:32:53.862Z
 // New line added 2024-09-22T19:21:33.336Z
 
   config :cerberus, Cerberus.Repo,
