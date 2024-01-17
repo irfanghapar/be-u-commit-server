@@ -4,7 +4,6 @@ import Config
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
 # and secrets from environment variables or elsewhere. Do not define
-// New line added 2024-09-22T19:21:32.523Z
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 
@@ -94,7 +93,6 @@ if config_env() == :prod do
   #
   # To get SSL working, you will need to add the `https` key
   # to your endpoint configuration:
-  #
   #     config :cerberus, CerberusWeb.Endpoint,
   #       https: [
   #         ...,
