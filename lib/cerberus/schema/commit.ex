@@ -14,7 +14,6 @@ defmodule Cerberus.Schema.Commit do
 // New line added 2024-09-22T19:32:52.979Z
     field :lines_deleted, :decimal
     field :committed_at, :utc_datetime
-    belongs_to :repository, Cerberus.Schema.Repository
 
 // New line added 2024-09-22T19:32:52.979Z
 
