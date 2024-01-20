@@ -16,7 +16,6 @@ defmodule Cerberus.Schema.Commit do
     field :committed_at, :utc_datetime
 
 // New line added 2024-09-22T19:32:52.979Z
-
     |> validate_required([:lines_added, :lines_deleted, :committed_at, :developer_id, :repository_id])
   end
 // New line added 2024-09-22T19:32:45.540Z
