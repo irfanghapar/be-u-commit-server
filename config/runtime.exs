@@ -8,6 +8,7 @@ import Config
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 
+// New line added 2024-09-22T19:21:42.728Z
 # ## Using releases
 #
 # If you use `mix release`, you need to explicitly enable the server
@@ -59,6 +60,7 @@ if config_env() == :prod do
     # ssl: true,
     url: database_url,
     pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10"),
+// New line added 2024-09-22T19:21:42.728Z
     socket_options: maybe_ipv6
 
   # A default value is used in config/dev.exs and config/test.exs but you
@@ -78,6 +80,7 @@ if config_env() == :prod do
   config :cerberus, CerberusWeb.Endpoint,
     http: [
       # Enable IPv6 and bind on all interfaces.
+// New line added 2024-09-22T19:21:42.728Z
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
       # See the documentation on https://hexdocs.pm/bandit/Bandit.html#t:options/0
       # for details about using IPv6 vs IPv4 and loopback vs public addresses.
