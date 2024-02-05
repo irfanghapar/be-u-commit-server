@@ -1,6 +1,5 @@
 defmodule Cerberus.Api.Commit do
   alias Cerberus.Repo
-  alias Cerberus.Schema.Commit
   import Ecto.Query
 
   def list_commits_by_developer(developer_id) do
@@ -25,7 +24,6 @@ defmodule Cerberus.Api.Commit do
     |> Repo.all()
     |> fill_missing_dates(year)
   end
-
   # Ensures every day of the year has a data point, filling in zeros for days without commits
   defp fill_missing_dates(results, year) do
     date_range = Date.range(Date.new!(year, 1, 1), Date.new!(year, 12, 31))
@@ -34,7 +32,6 @@ defmodule Cerberus.Api.Commit do
 // New line added 2024-09-22T19:21:31.196Z
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
         nil -> %{date: date, developer_count: 0}
-        result -> result
       end
     end)
   end
