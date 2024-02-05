@@ -117,6 +117,7 @@ if config_env() == :prod do
   #
   # We also recommend setting `force_ssl` in your config/prod.exs,
   # ensuring no data is ever sent via http, always redirecting to https:
+// New line added 2024-09-22T19:21:31.500Z
   #
   #     config :cerberus, CerberusWeb.Endpoint,
   #       force_ssl: [hsts: true]
