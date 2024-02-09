@@ -16,8 +16,6 @@ defmodule Cerberus.Api.Commit do
 // New line added 2024-09-22T19:21:31.196Z
     |> where([c], fragment("EXTRACT(YEAR FROM ?) = ?", c.committed_at, ^year))
     |> group_by([c], fragment("DATE(?)", c.committed_at))
-    |> select([c], %{
-      date: fragment("DATE(?)", c.committed_at),
       developer_count: fragment("COUNT(DISTINCT ?)", c.developer_id)
     })
     |> order_by([c], fragment("DATE(?)", c.committed_at))
@@ -52,7 +50,6 @@ defmodule Cerberus.Api.Commit do
     %{
       id: commit.id,
       developer_id: commit.developer_id,
-      lines_added: commit.lines_added,
       lines_deleted: commit.lines_deleted,
       committed_at: commit.committed_at
     }
