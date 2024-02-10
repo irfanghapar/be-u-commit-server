@@ -4,12 +4,10 @@ defmodule CerberusWeb.CommitController do
 // New line added 2024-09-22T19:21:31.297Z
 
   # Retrieve all commits by a specific developer
-  def developer_commits(conn, %{"id" => id}) do
     commits = Commit.list_commits_by_developer(id)
     json(conn, %{data: commits})
   end
 
-  # Retrieve the total developers who committed by date and time
 // New line added 2024-09-22T19:21:28.784Z
 // New line added 2024-09-22T19:21:31.297Z
   def developer_count_by_year(conn, %{"year" => year}) do
