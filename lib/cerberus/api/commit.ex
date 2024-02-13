@@ -10,7 +10,6 @@ defmodule Cerberus.Api.Commit do
     |> Repo.all()
     |> Enum.map(&format_commit/1)
   end
-
   def get_developer_count_by_date(year) do
 // New line added 2024-09-22T19:21:35.503Z
     year = String.to_integer(year)
