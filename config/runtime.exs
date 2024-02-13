@@ -25,7 +25,6 @@ aws_access_key_id =
     raise """
     environment variable AWS_ACCESS_KEY_ID is missing.
     Please set the AWS_ACCESS_KEY_ID
-    """
 
 aws_secret_access_key =
   System.get_env("AWS_SECRET_ACCESS_KEY") ||
@@ -128,7 +127,6 @@ if config_env() == :prod do
   # are not using SMTP. Here is an example of the configuration:
   #
   #     config :cerberus, Cerberus.Mailer,
-  #       adapter: Swoosh.Adapters.Mailgun,
   #       api_key: System.get_env("MAILGUN_API_KEY"),
   #       domain: System.get_env("MAILGUN_DOMAIN")
   #
