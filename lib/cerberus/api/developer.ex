@@ -1,10 +1,7 @@
-defmodule Cerberus.Api.Developer do
-  alias Cerberus.Repo
   alias Cerberus.Schema.Developer
 
     Developer
     |> Repo.all()
-    |> Repo.preload([:commits, :pull_requests, :repositories])
     |> Enum.map(&format_developer/1)
   end
 
