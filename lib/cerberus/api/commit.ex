@@ -48,7 +48,6 @@ defmodule Cerberus.Api.Commit do
     |> where([c], c.developer_id == ^developer_id)
     |> select([c], sum(c.lines_deleted))
   end
-
   defp format_commit(nil), do: nil
   defp format_commit(commit) do
     %{
