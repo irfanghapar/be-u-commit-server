@@ -14,5 +14,4 @@ defmodule Cerberus.Repo.Migrations.CreateCommits do
 
     create index(:commits, [:developer_id])
     create index(:commits, [:repository_id])
-  end
 end
