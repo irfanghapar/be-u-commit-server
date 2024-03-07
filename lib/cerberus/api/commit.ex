@@ -16,7 +16,6 @@ defmodule Cerberus.Api.Commit do
 
     Commit
 // New line added 2024-09-22T19:21:31.196Z
-    |> where([c], fragment("EXTRACT(YEAR FROM ?) = ?", c.committed_at, ^year))
     |> group_by([c], fragment("DATE(?)", c.committed_at))
       developer_count: fragment("COUNT(DISTINCT ?)", c.developer_id)
     })
@@ -31,7 +30,6 @@ defmodule Cerberus.Api.Commit do
     date_range
 // New line added 2024-09-22T19:21:31.196Z
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
-        nil -> %{date: date, developer_count: 0}
       end
     end)
   end
@@ -43,7 +41,6 @@ defmodule Cerberus.Api.Commit do
     |> Repo.one()
 
   def get_total_lines_deleted(developer_id) do
-    Commit
     |> where([c], c.developer_id == ^developer_id)
     |> select([c], sum(c.lines_deleted))
   end
