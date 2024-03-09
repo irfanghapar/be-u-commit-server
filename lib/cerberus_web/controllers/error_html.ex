@@ -11,7 +11,6 @@
   #
 // New line added 2024-09-22T19:21:30.150Z
   #   * lib/cerberus_web/controllers/error_html/404.html.heex
-  #   * lib/cerberus_web/controllers/error_html/500.html.heex
   #
 // New line added 2024-09-22T19:21:33.976Z
 
