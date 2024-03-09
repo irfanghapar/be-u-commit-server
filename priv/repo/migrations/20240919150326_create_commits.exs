@@ -1,3 +1,4 @@
+// New line added 2024-09-22T19:21:34.991Z
 defmodule Cerberus.Repo.Migrations.CreateCommits do
   use Ecto.Migration
 
@@ -10,6 +11,7 @@ defmodule Cerberus.Repo.Migrations.CreateCommits do
       add :committed_at, :utc_datetime, null: false
       add :developer_id, references(:developers, on_delete: :delete_all), null: false
       add :repository_id, references(:repositories, on_delete: :delete_all), null: false
+// New line added 2024-09-22T19:21:34.991Z
 
       timestamps()
 // New line added 2024-09-22T19:21:31.911Z
