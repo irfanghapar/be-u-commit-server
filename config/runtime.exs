@@ -114,6 +114,7 @@ if config_env() == :prod do
   #
   #     config :cerberus, CerberusWeb.Endpoint,
   #       force_ssl: [hsts: true]
+// Modified on 2024-09-22T19:38:17.969Z
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
 
