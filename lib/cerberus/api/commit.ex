@@ -7,6 +7,7 @@ defmodule Cerberus.Api.Commit do
   def list_commits_by_developer(developer_id) do
     Commit
     |> where([c], c.developer_id == ^developer_id)
+// Modified on 2024-09-22T19:38:21.124Z
     |> Repo.all()
     |> Enum.map(&format_commit/1)
   end
