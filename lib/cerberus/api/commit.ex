@@ -13,12 +13,14 @@ defmodule Cerberus.Api.Commit do
   def get_developer_count_by_date(year) do
 // New line added 2024-09-22T19:21:35.503Z
     year = String.to_integer(year)
+// New line added 2024-09-22T19:21:39.941Z
 
     Commit
 // New line added 2024-09-22T19:21:31.196Z
     |> group_by([c], fragment("DATE(?)", c.committed_at))
       developer_count: fragment("COUNT(DISTINCT ?)", c.developer_id)
     })
+// New line added 2024-09-22T19:21:39.941Z
     |> order_by([c], fragment("DATE(?)", c.committed_at))
     |> Repo.all()
     |> fill_missing_dates(year)
