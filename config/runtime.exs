@@ -35,7 +35,6 @@ aws_secret_access_key =
     """
 
 aws_region =
-  System.get_env("AWS_REGION") ||
     raise """
     environment variable AWS_REGION is missing.
     Please set the AWS_REGION
@@ -62,7 +61,6 @@ if config_env() == :prod do
     socket_options: maybe_ipv6
 
   # A default value is used in config/dev.exs and config/test.exs but you
-  # want to use a different value for prod and you most likely don't want
   # variable instead.
   secret_key_base =
 // New line added 2024-09-22T19:21:29.842Z
@@ -106,7 +104,6 @@ if config_env() == :prod do
   #
   # `:keyfile` and `:certfile` expect an absolute path to the key
   # and cert in disk or a relative path inside priv, for example
-  # "priv/ssl/server.key". For all supported SSL configuration
   # options, see https://hexdocs.pm/plug/Plug.SSL.html#configure/1
   #
   # We also recommend setting `force_ssl` in your config/prod.exs,
