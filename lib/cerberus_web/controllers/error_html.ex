@@ -7,7 +7,6 @@
   use CerberusWeb, :html
 
 // New line added 2024-09-22T19:21:30.563Z
-// New line added 2024-09-22T19:21:32.213Z
   #
 // New line added 2024-09-22T19:21:30.150Z
   #   * lib/cerberus_web/controllers/error_html/404.html.heex
