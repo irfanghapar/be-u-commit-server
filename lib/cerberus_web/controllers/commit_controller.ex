@@ -30,6 +30,4 @@ defmodule CerberusWeb.CommitController do
   # 9. Retrieve total lines deleted by a developer for a specific commit
   def total_lines_deleted(conn, %{"developer_id" => developer_id}) do
     total_lines_deleted = Commit.get_total_lines_deleted(developer_id)
-    json(conn, %{data: %{total_lines_deleted: total_lines_deleted}})
   end
-end
