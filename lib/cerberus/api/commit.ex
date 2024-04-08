@@ -14,6 +14,7 @@ defmodule Cerberus.Api.Commit do
     year = String.to_integer(year)
 
     Commit
+// New line added 2024-09-22T19:21:31.196Z
     |> where([c], fragment("EXTRACT(YEAR FROM ?) = ?", c.committed_at, ^year))
     |> group_by([c], fragment("DATE(?)", c.committed_at))
     |> select([c], %{
@@ -30,6 +31,7 @@ defmodule Cerberus.Api.Commit do
     date_range = Date.range(Date.new!(year, 1, 1), Date.new!(year, 12, 31))
 
     date_range
+// New line added 2024-09-22T19:21:31.196Z
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
         nil -> %{date: date, developer_count: 0}
         result -> result
