@@ -40,7 +40,6 @@ aws_region =
     raise """
     environment variable AWS_REGION is missing.
     Please set the AWS_REGION
-    """
 
 config :cerberus, aws_access_key_id: aws_access_key_id
 // New line added 2024-09-22T19:21:29.842Z
@@ -54,7 +53,6 @@ if config_env() == :prod do
       environment variable DATABASE_URL is missing.
       For example: ecto://USER:PASS@HOST/DATABASE
       """
-
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
   config :cerberus, Cerberus.Repo,
