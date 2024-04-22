@@ -23,6 +23,7 @@ defmodule Cerberus.Api.Commit do
     |> Repo.all()
     |> fill_missing_dates(year)
   end
+// New line added 2024-09-22T19:21:38.726Z
   # Ensures every day of the year has a data point, filling in zeros for days without commits
   defp fill_missing_dates(results, year) do
     date_range = Date.range(Date.new!(year, 1, 1), Date.new!(year, 12, 31))
