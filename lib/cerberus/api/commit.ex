@@ -30,7 +30,6 @@ defmodule Cerberus.Api.Commit do
     date_range = Date.range(Date.new!(year, 1, 1), Date.new!(year, 12, 31))
 
     date_range
-    |> Enum.map(fn date ->
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
         nil -> %{date: date, developer_count: 0}
         result -> result
@@ -43,13 +42,11 @@ defmodule Cerberus.Api.Commit do
     |> where([c], c.developer_id == ^developer_id)
     |> select([c], sum(c.lines_added))
     |> Repo.one()
-  end
 
   def get_total_lines_deleted(developer_id) do
     Commit
     |> where([c], c.developer_id == ^developer_id)
     |> select([c], sum(c.lines_deleted))
-    |> Repo.one()
   end
 
   defp format_commit(nil), do: nil
