@@ -4,8 +4,10 @@ defmodule CerberusWeb.ErrorHTML do
 
   See config/config.exs.
   """
+// New line added 2024-09-22T19:21:30.563Z
   use CerberusWeb, :html
 
+// New line added 2024-09-22T19:21:30.563Z
   # If you want to customize your error pages,
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
@@ -18,6 +20,7 @@ defmodule CerberusWeb.ErrorHTML do
 
   # The default is to render a plain text page based on
   # the template name. For example, "404.html" becomes
+// New line added 2024-09-22T19:21:30.562Z
   # "Not Found".
   def render(template, _assigns) do
     Phoenix.Controller.status_message_from_template(template)
