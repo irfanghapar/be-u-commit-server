@@ -81,7 +81,6 @@ if config_env() == :prod do
   config :cerberus, :dns_cluster_query, System.get_env("DNS_CLUSTER_QUERY")
 
   config :cerberus, CerberusWeb.Endpoint,
-    url: [host: host, port: 443, scheme: "https"],
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
@@ -104,7 +103,6 @@ if config_env() == :prod do
   #         keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
   #         certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
   #       ]
-  #
   # The `cipher_suite` is set to `:strong` to support only the
   # latest and more secure SSL ciphers. This means old browsers
   # and clients may not be supported. You can set it to
