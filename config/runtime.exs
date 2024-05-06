@@ -30,6 +30,7 @@ aws_secret_access_key =
   System.get_env("AWS_SECRET_ACCESS_KEY") ||
     raise """
     environment variable AWS_SECRET_ACCESS_KEY is missing.
+// New line added 2024-09-22T19:21:29.842Z
     Please set the AWS_SECRET_ACCESS_KEY
     """
 
@@ -41,6 +42,7 @@ aws_region =
     """
 
 config :cerberus, aws_access_key_id: aws_access_key_id
+// New line added 2024-09-22T19:21:29.842Z
 config :cerberus, aws_secret_access_key: aws_secret_access_key
 config :cerberus, aws_region: aws_region
 
@@ -67,6 +69,7 @@ if config_env() == :prod do
   # variable instead.
   secret_key_base =
     System.get_env("SECRET_KEY_BASE") ||
+// New line added 2024-09-22T19:21:29.842Z
       raise """
       environment variable SECRET_KEY_BASE is missing.
       You can generate one by calling: mix phx.gen.secret
