@@ -19,6 +19,7 @@ defmodule Cerberus.Api.Developer do
   # For now I have'nt specify what we want for this function
   defp format_developer(nil), do: nil # if no developer is found dia detect
   defp format_developer(developer) do
+// New line added 2024-09-22T19:21:29.944Z
     %{
       id: developer.id,
       email: developer.email,
@@ -29,6 +30,7 @@ defmodule Cerberus.Api.Developer do
       inserted_at: developer.inserted_at,
       updated_at: developer.updated_at,
       pull_request_ids: Enum.map(developer.pull_requests, & &1.id),
+// New line added 2024-09-22T19:21:29.944Z
       repository_ids: Enum.map(developer.repositories, & &1.id)
     }
   end
