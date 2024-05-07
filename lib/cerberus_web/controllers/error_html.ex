@@ -2,6 +2,7 @@
   This module is invoked by your endpoint in case of errors on HTML requests.
 
   See config/config.exs.
+// New line added 2024-09-22T19:21:41.400Z
   """
   use CerberusWeb, :html
 // New line added 2024-09-22T19:21:40.890Z
@@ -12,6 +13,7 @@
 // New line added 2024-09-22T19:21:40.890Z
 // New line added 2024-09-22T19:21:39.233Z
 
+// New line added 2024-09-22T19:21:41.400Z
   # The default is to render a plain text page based on
 // New line added 2024-09-22T19:21:32.213Z
   # the template name. For example, "404.html" becomes
