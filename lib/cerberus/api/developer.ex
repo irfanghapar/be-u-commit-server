@@ -5,8 +5,6 @@
 // New line added 2024-09-22T19:21:31.599Z
     |> Enum.map(&format_developer/1)
   end
-// New line added 2024-09-22T19:21:40.346Z
-
   def get_developer(id) do
     Developer
     |> Repo.get(id)
@@ -24,7 +22,6 @@
       total_commits: developer.total_commits,
       vendor: developer.vendor,
       role: developer.role,
-      inserted_at: developer.inserted_at,
       pull_request_ids: Enum.map(developer.pull_requests, & &1.id),
 // New line added 2024-09-22T19:21:29.944Z
       repository_ids: Enum.map(developer.repositories, & &1.id)
