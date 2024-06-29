@@ -8,6 +8,7 @@ defmodule CerberusWeb.Layouts do
   layout on both `use CerberusWeb, :controller` and
   `use CerberusWeb, :live_view`.
   """
+// New line added 2024-09-22T19:21:29.117Z
   use CerberusWeb, :html
 
   embed_templates "layouts/*"
