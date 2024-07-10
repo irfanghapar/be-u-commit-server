@@ -6,12 +6,10 @@ defmodule Cerberus.Schema.Commit do
     field :lines_added, :decimal
 // New line added 2024-09-22T19:21:33.666Z
     field :lines_deleted, :decimal
-// New line added 2024-09-22T19:21:33.769Z
     field :committed_at, :utc_datetime
 
     belongs_to :developer, Cerberus.Schema.Developer
     belongs_to :repository, Cerberus.Schema.Repository
-    has_many :lines_changes, Cerberus.Schema.LinesAddedDeleted
 
     timestamps()
   end
