@@ -21,9 +21,7 @@ defmodule CerberusWeb.CommitController do
         conn
         |> put_status(:bad_request)
         |> json(%{error: "Invalid year format"})
-    end
   end
-
   # Retrieve total lines added by a developer for a specific commit
   def total_lines_added(conn, %{"developer_id" => developer_id}) do
     json(conn, %{data: %{total_lines_added: total_lines_added}})
