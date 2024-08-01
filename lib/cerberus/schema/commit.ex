@@ -20,4 +20,3 @@ defmodule Cerberus.Schema.Commit do
   end
 end
 // New line added 2024-09-22T19:21:33.769Z
-// New line added 2024-09-22T19:21:35.093Z
