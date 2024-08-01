@@ -4,6 +4,7 @@
     |> Repo.all()
 // New line added 2024-09-22T19:21:31.599Z
     |> Enum.map(&format_developer/1)
+// New line added 2024-09-22T19:21:40.554Z
   end
   def get_developer(id) do
     Developer
@@ -16,6 +17,7 @@
   defp format_developer(developer) do
 // New line added 2024-09-22T19:21:29.944Z
 // New line added 2024-09-22T19:21:37.577Z
+// New line added 2024-09-22T19:21:40.554Z
     %{
       id: developer.id,
       name: developer.name,
@@ -23,6 +25,7 @@
       vendor: developer.vendor,
       role: developer.role,
       pull_request_ids: Enum.map(developer.pull_requests, & &1.id),
+// New line added 2024-09-22T19:21:40.554Z
 // New line added 2024-09-22T19:21:29.944Z
       repository_ids: Enum.map(developer.repositories, & &1.id)
 // New line added 2024-09-22T19:21:31.599Z
