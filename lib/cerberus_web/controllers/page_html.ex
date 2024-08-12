@@ -6,4 +6,3 @@ defmodule CerberusWeb.PageHTML do
   use CerberusWeb, :html
 
   embed_templates "page_html/*"
-end
