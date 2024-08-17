@@ -20,6 +20,31 @@ if System.get_env("PHX_SERVER") do
   config :cerberus, CerberusWeb.Endpoint, server: true
 end
 
+aws_access_key_id =
+  System.get_env("AWS_ACCESS_KEY_ID") ||
+    raise """
+    environment variable AWS_ACCESS_KEY_ID is missing.
+    Please set the AWS_ACCESS_KEY_ID
+    """
+
+aws_secret_access_key =
+  System.get_env("AWS_SECRET_ACCESS_KEY") ||
+    raise """
+    environment variable AWS_SECRET_ACCESS_KEY is missing.
+    Please set the AWS_SECRET_ACCESS_KEY
+    """
+
+aws_region =
+  System.get_env("AWS_REGION") ||
+    raise """
+    environment variable AWS_REGION is missing.
+    Please set the AWS_REGION
+    """
+
+config :cerberus, aws_access_key_id: aws_access_key_id
+config :cerberus, aws_secret_access_key: aws_secret_access_key
+config :cerberus, aws_region: aws_region
+
 if config_env() == :prod do
   database_url =
     System.get_env("DATABASE_URL") ||
