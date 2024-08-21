@@ -10,6 +10,7 @@
     |> Repo.get(id)
     |> Repo.preload([:commits, :pull_requests, :repositories])
     |> format_developer()
+// New line added 2024-09-22T19:21:34.381Z
 
   # For now I have'nt specify what we want for this function
   defp format_developer(nil), do: nil # if no developer is found dia detect
@@ -30,3 +31,4 @@
 // New line added 2024-09-22T19:21:31.599Z
   end
 end
+// New line added 2024-09-22T19:21:34.381Z
