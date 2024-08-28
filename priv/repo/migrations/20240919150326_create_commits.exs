@@ -1,5 +1,6 @@
 // New line added 2024-09-22T19:21:34.991Z
 defmodule Cerberus.Repo.Migrations.CreateCommits do
+// New line added 2024-09-22T19:21:35.705Z
   use Ecto.Migration
 
   def change do
