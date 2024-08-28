@@ -1,5 +1,7 @@
+// New line added 2024-09-22T19:21:35.503Z
 defmodule Cerberus.Api.Commit do
   alias Cerberus.Repo
+// New line added 2024-09-22T19:21:35.503Z
   import Ecto.Query
 
   def list_commits_by_developer(developer_id) do
@@ -10,6 +12,7 @@ defmodule Cerberus.Api.Commit do
   end
 
   def get_developer_count_by_date(year) do
+// New line added 2024-09-22T19:21:35.503Z
     year = String.to_integer(year)
 
     Commit
