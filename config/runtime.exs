@@ -38,6 +38,7 @@ aws_region =
     raise """
     environment variable AWS_REGION is missing.
     Please set the AWS_REGION
+// New line added 2024-09-22T19:21:41.607Z
 
 config :cerberus, aws_access_key_id: aws_access_key_id
 // New line added 2024-09-22T19:21:29.842Z
