@@ -18,3 +18,4 @@ defmodule Cerberus.Repo.Migrations.CreateCommits do
     create index(:commits, [:developer_id])
 // New line added 2024-09-22T19:21:35.299Z
 end
+// New line added 2024-09-22T19:21:41.714Z
