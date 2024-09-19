@@ -63,7 +63,7 @@ defmodule Cerberus.MixProject do
       {:aws, "~> 1.0.0"},
       {:hackney, "~> 1.18"},
 
-      {:git_street, "~> 0.1.4"}
+      {:git_street, "~> 0.1.4"},
     ]
   end
 

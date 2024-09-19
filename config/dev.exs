@@ -2,7 +2,7 @@ import Config
 
 # Configure your database
 config :cerberus, Cerberus.Repo,
-  url: "postgresql://irfanghapar:password@localhost:4000/cerberus_dev",
+  url: "postgresql://irfanghapar:password@localhost:5000/postgres?schema=public",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
