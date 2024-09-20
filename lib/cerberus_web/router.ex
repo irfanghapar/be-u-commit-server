@@ -25,6 +25,20 @@ defmodule CerberusWeb.Router do
   # scope "/api", CerberusWeb do
   #   pipe_through :api
   # end
+  scope "/api", CerberusWeb do
+    pipe_through :api
+
+    get "/developers", DeveloperController, :index
+    get "/developers/:id", DeveloperController, :show
+    get "/repositories/:id", RepoController, :show
+    get "/developer/:id/repositories", RepoController, :developer_repositories
+    get "/commits/developer/:id", CommitController, :developer_commits
+    get "/commits/developer_count/:year", CommitController, :developer_count_by_year
+    get "/developers/:developer_id/total_lines_added", CommitController, :total_lines_added
+    get "/developers/:developer_id/total_lines_deleted", CommitController, :total_lines_deleted
+  end
+
+
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:cerberus, :dev_routes) do

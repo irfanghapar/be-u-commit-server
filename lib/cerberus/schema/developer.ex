@@ -1,7 +1,7 @@
 defmodule Cerberus.Schema.Developer do
   use Ecto.Schema
   import Ecto.Changeset
-
+  
   schema "developers" do
     field :email, :string
     field :name, :string
