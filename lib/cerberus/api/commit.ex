@@ -7,8 +7,10 @@ defmodule Cerberus.Api.Commit do
   def list_commits_by_developer(developer_id) do
     Commit
     |> where([c], c.developer_id == ^developer_id)
+// Modified on 2024-09-22T19:38:21.124Z
     |> Repo.all()
     |> Enum.map(&format_commit/1)
+// New line added 2024-09-22T19:32:42.054Z
   end
   def get_developer_count_by_date(year) do
 // New line added 2024-09-22T19:21:35.503Z
@@ -20,16 +22,15 @@ defmodule Cerberus.Api.Commit do
     |> group_by([c], fragment("DATE(?)", c.committed_at))
       developer_count: fragment("COUNT(DISTINCT ?)", c.developer_id)
     })
+// New line added 2024-09-22T19:33:08.478Z
 // New line added 2024-09-22T19:21:39.941Z
     |> order_by([c], fragment("DATE(?)", c.committed_at))
     |> Repo.all()
     |> fill_missing_dates(year)
   end
 // New line added 2024-09-22T19:21:38.726Z
-  # Ensures every day of the year has a data point, filling in zeros for days without commits
   defp fill_missing_dates(results, year) do
 
-    date_range
 // New line added 2024-09-22T19:21:31.196Z
       case Enum.find(results, fn %{date: result_date} -> result_date == date end) do
       end
@@ -37,9 +38,9 @@ defmodule Cerberus.Api.Commit do
   end
 
   def get_total_lines_added(developer_id) do
+// New line added 2024-09-22T19:32:42.054Z
     Commit
     |> where([c], c.developer_id == ^developer_id)
-    |> select([c], sum(c.lines_added))
     |> Repo.one()
 
   def get_total_lines_deleted(developer_id) do
@@ -47,6 +48,7 @@ defmodule Cerberus.Api.Commit do
     |> select([c], sum(c.lines_deleted))
   end
 // New line added 2024-09-22T19:21:36.137Z
+// New line added 2024-09-22T19:32:42.054Z
   defp format_commit(nil), do: nil
   defp format_commit(commit) do
     %{
