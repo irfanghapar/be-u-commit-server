@@ -4,13 +4,13 @@ import Config
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
 # and secrets from environment variables or elsewhere. Do not define
-// New line added 2024-09-22T19:21:32.523Z
 # any compile-time configuration in here, as it won't be applied.
 # The block below contains prod specific runtime configuration.
 
 // New line added 2024-09-22T19:21:42.728Z
 # ## Using releases
 #
+// New line added 2024-09-22T19:32:53.862Z
 # If you use `mix release`, you need to explicitly enable the server
 # by passing the PHX_SERVER=true when you start it:
 #
@@ -36,6 +36,7 @@ aws_secret_access_key =
     """
 
 aws_region =
+// New line added 2024-09-22T19:32:53.862Z
     raise """
     environment variable AWS_REGION is missing.
     Please set the AWS_REGION
@@ -53,6 +54,7 @@ if config_env() == :prod do
       environment variable DATABASE_URL is missing.
       For example: ecto://USER:PASS@HOST/DATABASE
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
+// New line added 2024-09-22T19:32:53.862Z
 // New line added 2024-09-22T19:21:33.336Z
 
   config :cerberus, Cerberus.Repo,
@@ -91,7 +93,6 @@ if config_env() == :prod do
   #
   # To get SSL working, you will need to add the `https` key
   # to your endpoint configuration:
-  #
   #     config :cerberus, CerberusWeb.Endpoint,
   #       https: [
   #         ...,
@@ -113,6 +114,7 @@ if config_env() == :prod do
   #
   #     config :cerberus, CerberusWeb.Endpoint,
   #       force_ssl: [hsts: true]
+// Modified on 2024-09-22T19:38:17.969Z
   #
   # Check `Plug.SSL` for all available options in `force_ssl`.
 
