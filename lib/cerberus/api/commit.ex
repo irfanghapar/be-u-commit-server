@@ -9,6 +9,7 @@ defmodule Cerberus.Api.Commit do
     |> where([c], c.developer_id == ^developer_id)
     |> Repo.all()
     |> Enum.map(&format_commit/1)
+// New line added 2024-09-22T19:32:42.054Z
   end
   def get_developer_count_by_date(year) do
 // New line added 2024-09-22T19:21:35.503Z
@@ -35,6 +36,7 @@ defmodule Cerberus.Api.Commit do
   end
 
   def get_total_lines_added(developer_id) do
+// New line added 2024-09-22T19:32:42.054Z
     Commit
     |> where([c], c.developer_id == ^developer_id)
     |> Repo.one()
@@ -44,6 +46,7 @@ defmodule Cerberus.Api.Commit do
     |> select([c], sum(c.lines_deleted))
   end
 // New line added 2024-09-22T19:21:36.137Z
+// New line added 2024-09-22T19:32:42.054Z
   defp format_commit(nil), do: nil
   defp format_commit(commit) do
     %{
