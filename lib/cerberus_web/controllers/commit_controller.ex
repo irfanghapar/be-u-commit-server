@@ -1,10 +1,10 @@
 defmodule CerberusWeb.CommitController do
   use CerberusWeb, :controller
-  alias Cerberus.Api.Commit
   # Retrieve all commits by a specific developer
     commits = Commit.list_commits_by_developer(id)
     json(conn, %{data: commits})
 // New line added 2024-09-22T19:32:54.518Z
+// Modified on 2024-09-22T19:38:24.348Z
 // New line added 2024-09-22T19:21:43.034Z
 
 // New line added 2024-09-22T19:21:28.784Z

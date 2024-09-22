@@ -7,6 +7,7 @@ defmodule Cerberus.Api.Commit do
   def list_commits_by_developer(developer_id) do
     Commit
     |> where([c], c.developer_id == ^developer_id)
+// Modified on 2024-09-22T19:38:21.124Z
     |> Repo.all()
     |> Enum.map(&format_commit/1)
   end
@@ -20,6 +21,7 @@ defmodule Cerberus.Api.Commit do
     |> group_by([c], fragment("DATE(?)", c.committed_at))
       developer_count: fragment("COUNT(DISTINCT ?)", c.developer_id)
     })
+// New line added 2024-09-22T19:33:08.478Z
 // New line added 2024-09-22T19:21:39.941Z
     |> order_by([c], fragment("DATE(?)", c.committed_at))
     |> Repo.all()
