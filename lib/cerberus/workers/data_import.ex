@@ -4,15 +4,26 @@ defmodule Cerberus.Workers.DataImport do
   import Ecto.Query
   require Logger
 
+  @csv_files [
+    "lib/cerberus/workers/data/cdx-android-app.csv",
+    "lib/cerberus/workers/data/cdx-platform-web.csv"
+  ]
+
   def import_data do
-    File.stream!("lib/cerberus/workers/file.csv")
-    |> Stream.map(&String.trim/1)
-    |> Stream.map(&parse_commit_line/1)
-    |> Stream.filter(&(&1 != nil))
+    @csv_files
+    |> Enum.flat_map(&process_file/1)
     |> Enum.each(&process_commit/1)
   end
 
-  defp parse_commit_line(line) do
+  defp process_file(file_path) do
+    File.stream!(file_path)
+    |> Stream.map(&String.trim/1)
+    |> Stream.map(&(parse_commit_line(&1, file_path)))
+    |> Stream.filter(&(&1 != nil))
+    |> Enum.to_list()
+  end
+
+  defp parse_commit_line(line, file_path) do
     case Regex.run(~r/^(\w+) Developer: (.*) \((.*)\) Date: (.*) Lines Added: (\d+) Lines Deleted: (\d+)$/, line) do
       [_, hash, developer_name, developer_email, date_str, lines_added, lines_deleted] ->
         case parse_date(date_str) do
@@ -22,14 +33,28 @@ defmodule Cerberus.Workers.DataImport do
               developer_name: developer_name,
               developer_email: developer_email,
               date: date,
-              lines_added: Decimal.new(lines_added),
-              lines_deleted: Decimal.new(lines_deleted)
+              lines_added: parse_lines(lines_added),
+              lines_deleted: parse_lines(lines_deleted),
+              repository_name: extract_repository_name(file_path)
             }
           {:error, _} ->
             Logger.error("Invalid date format: #{date_str}")
             nil
         end
       _ -> nil
+    end
+  end
+
+  defp extract_repository_name(file_path) do
+    file_path
+    |> Path.basename(".csv")
+    |> String.replace("-", " ")
+  end
+
+  defp parse_lines(lines) do
+    case lines do
+      "inf" -> Decimal.new("Infinity")
+      _ -> Decimal.new(lines)
     end
   end
 
@@ -65,7 +90,7 @@ defmodule Cerberus.Workers.DataImport do
   defp process_commit(commit_data) do
     Repo.transaction(fn ->
       developer = upsert_developer(commit_data)
-      repository = upsert_repository()
+      repository = upsert_repository(commit_data.repository_name)
       upsert_developer_repository(developer, repository)
       commit = create_commit(developer, repository, commit_data)
       create_lines_changed(developer, commit, commit_data)
@@ -85,10 +110,10 @@ defmodule Cerberus.Workers.DataImport do
     )
   end
 
-  defp upsert_repository do
+  defp upsert_repository(name) do
     Repo.insert!(
       %Repository{
-        name: "Default Repository",
+        name: name,
         total_commits: 1
       },
       on_conflict: [inc: [total_commits: 1]],

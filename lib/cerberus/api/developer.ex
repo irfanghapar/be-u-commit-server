@@ -28,7 +28,6 @@ defmodule Cerberus.Api.Developer do
       role: developer.role,
       inserted_at: developer.inserted_at,
       updated_at: developer.updated_at,
-      commit_ids: Enum.map(developer.commits, & &1.id),
       pull_request_ids: Enum.map(developer.pull_requests, & &1.id),
       repository_ids: Enum.map(developer.repositories, & &1.id)
     }
