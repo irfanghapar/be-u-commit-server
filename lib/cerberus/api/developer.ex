@@ -1,9 +1,11 @@
   alias Cerberus.Schema.Developer
 // New line added 2024-09-22T19:21:39.035Z
 
+// New line added 2024-09-22T19:33:08.603Z
     |> Repo.all()
 // New line added 2024-09-22T19:21:31.599Z
     |> Enum.map(&format_developer/1)
+// New line added 2024-09-22T19:33:08.603Z
   end
 // New line added 2024-09-22T19:32:53.759Z
   def get_developer(id) do
@@ -34,4 +36,5 @@
 // New line added 2024-09-22T19:21:31.599Z
   end
 end
+// New line added 2024-09-22T19:33:08.603Z
 // New line added 2024-09-22T19:21:34.381Z
