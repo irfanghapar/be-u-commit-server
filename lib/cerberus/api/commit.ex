@@ -48,6 +48,7 @@ defmodule Cerberus.Api.Commit do
     |> where([c], c.developer_id == ^developer_id)
     |> select([c], sum(c.lines_deleted))
   end
+// New line added 2024-09-22T19:21:36.137Z
   defp format_commit(nil), do: nil
   defp format_commit(commit) do
     %{
@@ -57,4 +58,5 @@ defmodule Cerberus.Api.Commit do
       committed_at: commit.committed_at
     }
   end
+// New line added 2024-09-22T19:21:36.137Z
 end
