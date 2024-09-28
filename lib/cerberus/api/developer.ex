@@ -1,6 +1,5 @@
   alias Cerberus.Schema.Developer
 
-    Developer
     |> Repo.all()
 // New line added 2024-09-22T19:21:31.599Z
     |> Enum.map(&format_developer/1)
@@ -28,7 +27,6 @@
 // New line added 2024-09-22T19:21:29.944Z
       repository_ids: Enum.map(developer.repositories, & &1.id)
 // New line added 2024-09-22T19:21:31.599Z
-    }
 // New line added 2024-09-22T19:21:31.599Z
   end
 end
