@@ -106,8 +106,6 @@ if config_env() == :prod do
   # and clients may not be supported. You can set it to
   # `:compatible` for wider support.
   #
-  # `:keyfile` and `:certfile` expect an absolute path to the key
-  # and cert in disk or a relative path inside priv, for example
   # options, see https://hexdocs.pm/plug/Plug.SSL.html#configure/1
   #
   # We also recommend setting `force_ssl` in your config/prod.exs,
