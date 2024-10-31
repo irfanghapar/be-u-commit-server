@@ -1,6 +1,5 @@
 defmodule Cerberus.Schema.Commit do
   use Ecto.Schema
-  import Ecto.Changeset
 
   schema "commits" do
     field :lines_added, :decimal
@@ -15,8 +14,6 @@ defmodule Cerberus.Schema.Commit do
   end
 
   def changeset(commit, attrs) do
-    commit
-    |> cast(attrs, [:lines_added, :lines_deleted, :committed_at, :developer_id, :repository_id])
     |> validate_required([:lines_added, :lines_deleted, :committed_at, :developer_id, :repository_id])
   end
 end
