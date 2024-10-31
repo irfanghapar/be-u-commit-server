@@ -2,7 +2,6 @@ defmodule Cerberus.Api.Developer do
   alias Cerberus.Repo
   alias Cerberus.Schema.Developer
 
-  def list_developers do
     Developer
     |> Repo.all()
     |> Repo.preload([:commits, :pull_requests, :repositories])
@@ -14,7 +13,6 @@ defmodule Cerberus.Api.Developer do
     |> Repo.get(id)
     |> Repo.preload([:commits, :pull_requests, :repositories])
     |> format_developer()
-  end
 
   # For now I have'nt specify what we want for this function
   defp format_developer(nil), do: nil # if no developer is found dia detect
@@ -28,7 +26,6 @@ defmodule Cerberus.Api.Developer do
       vendor: developer.vendor,
       role: developer.role,
       inserted_at: developer.inserted_at,
-      updated_at: developer.updated_at,
       pull_request_ids: Enum.map(developer.pull_requests, & &1.id),
 // New line added 2024-09-22T19:21:29.944Z
       repository_ids: Enum.map(developer.repositories, & &1.id)
