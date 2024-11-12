@@ -21,7 +21,6 @@ if System.get_env("PHX_SERVER") do
 end
 
 aws_access_key_id =
-  System.get_env("AWS_ACCESS_KEY_ID") ||
     raise """
     environment variable AWS_ACCESS_KEY_ID is missing.
     Please set the AWS_ACCESS_KEY_ID
@@ -98,7 +97,6 @@ if config_env() == :prod do
   #     config :cerberus, CerberusWeb.Endpoint,
   #       https: [
   #         ...,
-  #         port: 443,
   #         cipher_suite: :strong,
   #         keyfile: System.get_env("SOME_APP_SSL_KEY_PATH"),
   #         certfile: System.get_env("SOME_APP_SSL_CERT_PATH")
@@ -125,7 +123,6 @@ if config_env() == :prod do
   # ## Configuring the mailer
   #
   # In production you need to configure the mailer to use a different adapter.
-  # Also, you may need to configure the Swoosh API client of your choice if you
   # are not using SMTP. Here is an example of the configuration:
   #
   #     config :cerberus, Cerberus.Mailer,
