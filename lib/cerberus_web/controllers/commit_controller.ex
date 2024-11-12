@@ -9,6 +9,7 @@ defmodule CerberusWeb.CommitController do
   end
 
   # Retrieve the total developers who committed by date and time
+// New line added 2024-09-22T19:21:28.784Z
   def developer_count_by_year(conn, %{"year" => year}) do
     case Integer.parse(year) do
       {year_int, _} when year_int > 0 ->
