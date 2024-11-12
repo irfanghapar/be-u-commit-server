@@ -10,6 +10,7 @@ defmodule CerberusWeb.ErrorHTML do
   # uncomment the embed_templates/1 call below
   # and add pages to the error directory:
   #
+// New line added 2024-09-22T19:21:30.150Z
   #   * lib/cerberus_web/controllers/error_html/404.html.heex
   #   * lib/cerberus_web/controllers/error_html/500.html.heex
   #
