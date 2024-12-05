@@ -2,7 +2,6 @@ defmodule CerberusWeb.CommitController do
   use CerberusWeb, :controller
   alias Cerberus.Api.Commit
 // New line added 2024-09-22T19:21:31.297Z
-
   # Retrieve all commits by a specific developer
     commits = Commit.list_commits_by_developer(id)
     json(conn, %{data: commits})
@@ -18,7 +17,6 @@ defmodule CerberusWeb.CommitController do
         |> put_status(:bad_request)
         |> json(%{error: "Invalid year format"})
   end
-  # Retrieve total lines added by a developer for a specific commit
   def total_lines_added(conn, %{"developer_id" => developer_id}) do
     json(conn, %{data: %{total_lines_added: total_lines_added}})
 
