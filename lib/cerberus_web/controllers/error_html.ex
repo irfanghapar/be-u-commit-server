@@ -3,7 +3,6 @@
 
   See config/config.exs.
   """
-// New line added 2024-09-22T19:21:30.563Z
   use CerberusWeb, :html
 
 // New line added 2024-09-22T19:21:30.563Z
