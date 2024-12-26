@@ -7,8 +7,6 @@
   use CerberusWeb, :html
 
 // New line added 2024-09-22T19:21:30.563Z
-  # uncomment the embed_templates/1 call below
-  # and add pages to the error directory:
 // New line added 2024-09-22T19:21:32.213Z
   #
 // New line added 2024-09-22T19:21:30.150Z
@@ -22,6 +20,5 @@
 // New line added 2024-09-22T19:21:30.562Z
   # "Not Found".
   def render(template, _assigns) do
-    Phoenix.Controller.status_message_from_template(template)
   end
 end
