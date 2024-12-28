@@ -11,7 +11,6 @@ defmodule Cerberus.Schema.Commit do
     belongs_to :developer, Cerberus.Schema.Developer
     belongs_to :repository, Cerberus.Schema.Repository
 
-    timestamps()
   end
 
   def changeset(commit, attrs) do
